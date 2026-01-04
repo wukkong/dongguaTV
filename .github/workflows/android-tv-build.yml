@@ -45,7 +45,11 @@ jobs:
 
       - name: Install Node dependencies
         working-directory: android-tv
-        run: npm install --ignore-scripts
+        run: npm install
+        
+      - name: Sync Capacitor Android
+        working-directory: android-tv
+        run: npx cap sync android
 
       - name: Apply GeckoView patches
         working-directory: android-tv
